@@ -1,0 +1,4 @@
+User-agent: *
+alow: /
+host: mistikforce.github.io
+sitemap: https://mistikforce.github.io/Monticello/sitemap.xml
