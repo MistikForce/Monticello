@@ -1,0 +1,62 @@
+[
+    {
+    "pic":"news_1-min.jpg",
+    "title":"see the unmatched beauty of the great.",
+    "text":"Free directories: directories are perfect for customers that are searching for...",
+    "author":{
+        "avatar":"avatar_alja-min.png",
+        "name":"Alja Brun",
+        "date":"20 Jan 2020"
+        }
+    },
+    {
+    "pic":"news_2-min.jpg",
+    "title":"effective advertising pointers.",
+    "text":"Having a home based business is a wonderful asset to your life...",
+    "author":{
+        "avatar":"avatar_domimic-min.png",
+        "name":"Dominic Freeman",
+        "date":"13 Dec 2019"
+        }
+    },
+    {
+    "pic":"news_3-min.jpg",
+    "title":"hypnotize yourself into the ghost",
+    "text":"There are many things that are important to catalog design...",
+    "author":{
+        "avatar":"avatar_alice-min.png",
+        "name":"Alice Ward",
+        "date":"30 Nov 2019"
+        }
+    },
+    {
+    "pic":"news_1-min.jpg",
+    "title":"see the unmatched beauty of the great",
+    "text":"Free directories: directories are perfect for customers that are searching for...",
+    "author":{
+        "avatar":"avatar_alja-min.png",
+        "name":"Alja Brun",
+        "date":"20 Jan 2020"
+        }
+    },
+    {
+    "pic":"news_2-min.jpg",
+    "title":"effective advertising pointers."  ,
+    "text":"Having a home based business is a wonderful asset to your life...",
+    "author":{
+        "avatar":"avatar_domimic-min.png",
+        "name":"Dominic Freeman",
+        "date":"13 Dec 2019"
+        }
+    },
+    {
+    "pic":"news_3-min.jpg",
+    "title":"hypnotize yourself into the ghost"  ,
+    "text":"There are many things that are important to catalog design...",
+    "author":{
+        "avatar":"avatar_alice-min.png",
+        "name":"Alice Ward",
+        "date":"30 Nov 2019"
+        }
+    }
+]

@@ -1,0 +1,14 @@
+@media screen and (max-width: 1400px) {
+  .news .slider_wrap .prev {
+    left: -4%;
+  }
+  .news .slider_wrap .next {
+    right: -4%;
+  }
+  .news .item {
+    max-width: 500px;
+  }
+  .news .item_content {
+    padding: 20px 15px 20px;
+  }
+}

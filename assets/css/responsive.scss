@@ -1,0 +1,29 @@
+$base_size:16;//коэффициент по умолчанию
+@mixin fz($size_px) {
+    font-size: ($size_px/$base_size)+rem;
+}
+
+@media screen and (max-width:1400px){
+    .news {
+        .slider_wrap {
+            .prev {
+                left: -4%;
+            }
+            .next {
+                right: -4%;
+            }
+        }  
+        .item {
+            max-width: 500px;
+            &_content {
+                padding: 20px 15px 20px;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (max-width:400px){
+
+}

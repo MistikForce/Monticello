@@ -1,0 +1,35 @@
+/* montserrat-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v18-latin-ext_latin-regular.woff2') format('woff2');
+  }
+  /* montserrat-700 - latin-ext_latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v18-latin-ext_latin-700.woff2') format('woff2');
+}
+  /* source-sans-pro-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/source-sans-pro-v18-latin-ext_latin-regular.woff2') format('woff2');
+}
+/* open-sans-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v27-latin-ext_latin-regular.woff2') format('woff2');
+  }
+  /* open-sans-italic - latin-ext_latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/open-sans-v27-latin-ext_latin-italic.woff2') format('woff2');
+}
