@@ -151,6 +151,7 @@ $(function () {
     speed: 2000,
     pause: 3000,
     swipe: false,
+    allowTouchMove: false,
     loop: true,
     vertical: true,
     verticalHeight: 800,
