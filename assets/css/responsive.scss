@@ -93,6 +93,8 @@ $base_size:16;//коэффициент по умолчанию
     .footer {
         height: 400px;
         .social {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
         }
     }
@@ -103,7 +105,8 @@ $base_size:16;//коэффициент по умолчанию
         }
         .project {
             .image {
-                box-shadow: -70px -40px 0px #55b7ff;
+                -webkit-box-shadow: -70px -40px 0px #55b7ff;
+                        box-shadow: -70px -40px 0px #55b7ff;
             }
             .info {
                 width: 60%;
@@ -123,7 +126,8 @@ $base_size:16;//коэффициент по умолчанию
         .project_2 {
             margin-bottom: 0;
             .image {
-                box-shadow: 70px -40px 0px #7E5AFF;
+                -webkit-box-shadow: 70px -40px 0px #7E5AFF;
+                        box-shadow: 70px -40px 0px #7E5AFF;
             }
         }
     }
@@ -246,9 +250,16 @@ $base_size:16;//коэффициент по умолчанию
     }
     .projects {
         .project {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .image {
                 width: 90%;
                 margin: 0 auto 30px;
@@ -272,7 +283,10 @@ $base_size:16;//коэффициент по умолчанию
             }
         }
         .project_2 {
-            flex-direction: column-reverse;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: reverse;
+                -ms-flex-direction: column-reverse;
+                    flex-direction: column-reverse;
         }
     }
     
@@ -309,10 +323,19 @@ $base_size:16;//коэффициент по умолчанию
             }
             height: 550px;
             .contact_wrap {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
             }
             .contact_info {
                 li{
@@ -330,7 +353,10 @@ $base_size:16;//коэффициент по умолчанию
             margin-bottom: 0;
         }
         .social {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             gap: 10px;
             max-width: 40px;
             min-width: 40px;
