@@ -148,10 +148,9 @@ $(function () {
   $("#slider").lightSlider({
     item: 1,
     auto: true,
-    speed: 2000,
+    speed: 1500,
     pause: 3000,
-    swipe: false,
-    allowTouchMove: false,
+    enableTouch: false,
     loop: true,
     vertical: true,
     verticalHeight: 800,
