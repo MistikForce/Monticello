@@ -194,6 +194,11 @@
   #hamburger_menu {
     display: block;
   }
+
+  .sidemenu .social {
+    margin-left: 15px;
+    display: flex;
+  }
 }
 @media screen and (max-width: 600px) {
   .top .title .text {

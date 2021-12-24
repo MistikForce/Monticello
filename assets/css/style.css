@@ -342,7 +342,7 @@ a:focus {
 .sidemenu li {
   position: relative;
 }
-.sidemenu li a {
+.sidemenu li a:not(.social > li > a) {
   display: inline-block;
   padding: 15px;
   text-decoration: none;
@@ -354,7 +354,7 @@ a:focus {
   position: relative;
   overflow: hidden;
 }
-.sidemenu li a:active {
+.sidemenu li a:not(.social > li > a):active {
   color: #ff6363;
 }
 

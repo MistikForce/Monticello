@@ -231,9 +231,14 @@ $base_size:16;//коэффициент по умолчанию
     #main_menu, .social {
         display: none;
     }
-
     #hamburger_menu {
         display: block;
+    }
+    .sidemenu {
+        .social {
+            margin-left: 15px;
+            display: flex;
+        }
     }
 }
 @media screen and (max-width:600px){
