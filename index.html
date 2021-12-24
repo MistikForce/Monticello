@@ -33,23 +33,53 @@
     <link rel="stylesheet" href="assets/css/responsive.min.css">
 </head>
 <body>
+    <div id="mobile_menu_wrap">
+        <div class="sidemenu_top">
+            <div class="mobile_logo">
+                <a href="#" class="logo_link">
+                    <img src="assets/images/Logo-min.png" alt="logo" class="logo_img">
+                </a>
+            </div>
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>  
+        </div>
+        <nav class="sidemenu">
+            <ul>
+                <li><a href="#">about us</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#news">news</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="page_overlay"></div>
     <header class="header">
         <div class="container">
-            <div class="wrap">
-                <div class="logo"><img src="assets/images/Logo-min.png" alt="logo"></div>
-            <nav id="main_menu">
-                <ul>
-                    <li><a href="#" class="anchor">about us</a></li>
-                    <li><a href="#projects" class="anchor">projects</a></li>
-                    <li><a href="#news" class="anchor">news</a></li>
-                    <li><a href="#contact" class="anchor">contact</a></li>
+            <div class="nav_wrap">
+                <a href="#" class="logo"><img src="assets/images/Logo-min.png" alt="logo"></a>
+                <nav id="main_menu">
+                    <ul>
+                        <li><a href="#" class="anchor">about us</a></li>
+                        <li><a href="#projects" class="anchor">projects</a></li>
+                        <li><a href="#news" class="anchor">news</a></li>
+                        <li><a href="#contact" class="anchor">contact</a></li>
+                    </ul>
+                </nav>
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/" target="blanc" rel="nofollow"><svg width="10" height="16"><use href="assets/images/sprite.svg#facebook"></use></svg></a></li>
+                    <li><a href="https://www.twitter.com/" target="blanc" rel="nofollow"><svg width="16" height="14"><use href="assets/images/sprite.svg#twitter"></use></svg></a></li>
+                    <li><a href="https://www.instagram.com/" target="blanc" rel="nofollow"><svg width="15" height="15"><use href="assets/images/sprite.svg#instagram"></use></svg></a></li>
                 </ul>
-            </nav>
-            <ul class="social">
-                <li><a href="https://www.facebook.com/" target="blanc" rel="nofollow"><svg width="10" height="16"><use href="assets/images/sprite.svg#facebook"></use></svg></a></li>
-                <li><a href="https://www.twitter.com/" target="blanc" rel="nofollow"><svg width="16" height="14"><use href="assets/images/sprite.svg#twitter"></use></svg></a></li>
-                <li><a href="https://www.instagram.com/" target="blanc" rel="nofollow"><svg width="15" height="15"><use href="assets/images/sprite.svg#instagram"></use></svg></a></li>
-            </ul>
+                <div id="hamburger_menu">
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+                    </button>  
+                </div>
             </div>
         </div>
     </header>
@@ -57,7 +87,7 @@
         <section id="top" class="top">
             <ul id="slider">
                 <li>
-                    <div class="item item1 lazy-bg"  data-src="assets/images/top_slide_0.jpg"></div>
+                    <div class="item item1 lazy-bg"  data-src="assets/images/top_slide_0-min.jpg"></div>
                     <div class="gradient"></div>
                     <div class="title">
                         <h2 class="text">Simple & Modern</h2>
@@ -65,7 +95,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="item item2 lazy-bg" data-src="assets/images/top_slide_1.jpg"></div>
+                    <div class="item item2 lazy-bg" data-src="assets/images/top_slide_1-min.jpg"></div>
                     <div class="gradient"></div>
                     <div class="title">
                         <h2 class="text">Simple & Pimle</h2>
@@ -73,7 +103,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="item item3 lazy-bg" data-src="assets/images/top_slide_2.jpg"></div>
+                    <div class="item item3 lazy-bg" data-src="assets/images/top_slide_2-min.jpg"></div>
                     <div class="gradient"></div>
                     <div class="title">
                         <h2 class="text">Simple & Dimple</h2>
@@ -81,7 +111,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="item item4 lazy-bg" data-src="assets/images/top_slide_3.jpg"></div>
+                    <div class="item item4 lazy-bg" data-src="assets/images/top_slide_3-min.jpg"></div>
                     <div class="gradient"></div>
                     <div class="title">
                         <h2 class="text">Pimple & Simple</h2>
@@ -89,7 +119,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="item item5 lazy-bg" data-src="assets/images/top_slide_4.jpg"></div>
+                    <div class="item item5 lazy-bg" data-src="assets/images/top_slide_4-min.jpg"></div>
                     <div class="gradient"></div>
                     <div class="title">
                         <h2 class="text">Pimple & Dimple</h2>
@@ -103,7 +133,7 @@
             <div class="container">
                 <h2 class="title_with_line">what we do</h2>
                 <div class="project project_1">
-                    <div class="image"><img src="assets/images/project_img_1-min.jpg" alt="photo of the first project"></div>
+                    <div class="image"><img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/project_img_1-min.jpg" alt="photo of the first project"></div>
                     <div class="info">
                         <div class="overhead">one world</div>
                         <h2 class="title">trade center</h2>
@@ -126,7 +156,7 @@
                             <span class="address">Hong Kong - 1588 feet</span>
                         </div>
                     </div>
-                    <div class="image"><img src="assets/images/project_img_2-min.jpg" alt="photo of the first project"></div>
+                    <div class="image"><img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/project_img_2-min.jpg" alt="photo of the first project"></div>
                 </div>
             </div>
         </section>
@@ -144,20 +174,20 @@
             <div class="container">
                 <h2 class="title_with_line">gallery</h2>
                 <div id="light_gallery">
-                    <a href="assets/images/gall_1.jpg">
-                        <img src="assets/images/gall_1.jpg" />
+                    <a href="assets/images/gall_1-min.jpg">
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/gall_1-min.jpg" />
                     </a>
                     <a href="assets/images/gall_2-min.jpg">
-                        <img src="assets/images/gall_2-min.jpg" />
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/gall_2-min.jpg" />
                     </a>
                     <a href="assets/images/gall_3-min.jpg">
-                        <img src="assets/images/gall_3-min.jpg" />
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/gall_3-min.jpg" />
                     </a>
                     <a href="assets/images/gall_4-min.jpg">
-                        <img src="assets/images/gall_4-min.jpg" />
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/gall_4-min.jpg" />
                     </a>
                     <a href="assets/images/gall_5-min.jpg">
-                        <img src="assets/images/gall_5-min.jpg" />
+                        <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/gall_5-min.jpg" />
                     </a>
                 </div>
                 <button type="button" class="btn">see more</button>
@@ -165,7 +195,7 @@
         </section>
         <div id="map">
             <a href="javascript:void(0)" id="init_map">
-                <img src="assets/images/karta.png" alt="preload map">
+                <img class="lazy" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==" data-src="assets/images/karta.png" alt="preload map">
                 <p>click to interactive</p>
             </a>
         </div>

@@ -1,3 +1,108 @@
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+   * Slider
+   */
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -37,6 +142,9 @@ a {
   text-decoration: none;
   display: block;
 }
+a:focus {
+  transform: scale(1.05);
+}
 
 .btn {
   width: 190px;
@@ -73,7 +181,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  max-width: 160px;
+  min-width: 140px;
+  width: 100%;
 }
 .social li {
   width: 40px;
@@ -82,7 +192,6 @@ a {
   border-radius: 50%;
   line-height: 41px;
   text-align: center;
-  overflow: hidden;
 }
 .social li svg {
   fill: #fff;
@@ -114,10 +223,121 @@ a {
   transform: translateX(-50%);
 }
 
+.lSAction > .lSPrev,
+.lSAction > .lSNext {
+  display: none;
+}
+
+.fixed_nav .header {
+  background: linear-gradient(243.43deg, #7e5affd0 16.9%, #55b8ffc0 83.27%);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: all 0.5s linear;
+  height: 60px;
+  box-shadow: 0px 0.5px 10px #2e193b8f;
+}
+.fixed_nav .top {
+  margin-top: 60px;
+  transition: all 0.2s linear;
+}
+
+#hamburger_menu {
+  display: none;
+}
+
+.hamburger {
+  padding: 0;
+}
+.hamburger .hamburger-box .hamburger-inner {
+  top: 2px;
+  background-color: #fff;
+}
+.hamburger .hamburger-box .hamburger-inner::before, .hamburger .hamburger-box .hamburger-inner::after {
+  background-color: #fff;
+  top: 10px;
+}
+.hamburger .hamburger-box .hamburger-inner::after {
+  top: 20px;
+}
+
+#page_overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+#mobile_menu_wrap {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  background: linear-gradient(251.06deg, #55b8ffd8 -2.19%, #7e5affd7 103.21%);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100%;
+  box-shadow: 0 0 5px #684d9b54;
+  max-width: 350px;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+#mobile_menu_wrap.top {
+  max-width: 100%;
+  height: auto;
+  min-height: 200px;
+}
+
+.sidemenu_top {
+  height: 60px;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.sidemenu_top .mobile_logo img {
+  width: 180px;
+}
+.sidemenu_top .hamburger-box {
+  height: px;
+}
+
+.sidemenu li {
+  position: relative;
+}
+.sidemenu li a {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.sidemenu li a:active {
+  color: #ff6363;
+}
+
+.open #page_overlay {
+  display: block;
+}
+.open #mobile_menu_wrap {
+  left: 0px;
+}
+
 #main_menu {
-  max-width: 515px;
+  max-width: 505px;
   min-width: 330px;
   width: 100%;
+  margin-right: 3.5%;
 }
 #main_menu ul {
   display: flex;
@@ -146,27 +366,30 @@ a {
 
 .header {
   position: absolute;
+  top: 0px;
   width: 100%;
-  padding-top: 54px;
+  height: 107px;
   z-index: 100;
-}
-.header .wrap {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-end;
+  transition: all 0.5s linear;
+}
+.header .nav_wrap {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.header .logo {
+  margin-right: 8.5%;
 }
 .header .logo img {
   width: auto;
 }
 
-.lSAction > .lSPrev,
-.lSAction > .lSNext {
-  display: none;
-}
-
 .top {
   height: 800px;
   position: relative;
+  box-shadow: 0px 0.5px 10px #2e193b8f;
 }
 .top .arrow {
   display: block;
@@ -236,7 +459,7 @@ a {
 .top .lSSlideOuter .lSPager.lSpg {
   position: absolute;
   top: 48%;
-  right: -68px;
+  right: -80px;
   transform: rotateZ(90deg) translateY(-50%) !important;
 }
 .top .lSSlideOuter .lSPager.lSpg li {
@@ -331,7 +554,7 @@ a {
 .news .slider_wrap .prev,
 .news .slider_wrap .next {
   position: absolute;
-  top: 50%;
+  top: 45%;
   display: block;
   width: 40px;
   height: 40px;
@@ -374,18 +597,31 @@ a {
   height: 514px;
   background-color: #fff;
   color: #2C4058;
-  overflow: hidden;
   margin: 0 auto;
+}
+.news .item_image {
+  width: 100%;
+}
+.news .item:hover {
+  transform: scale(1.03);
 }
 .news .item_content {
   padding: 30px 20px 30px;
 }
 .news .item_content .title {
+  height: 50px;
   text-transform: uppercase;
   font-size: 1.375rem;
-  margin-bottom: 11px;
+  line-height: 27px;
+  margin-bottom: 15px;
 }
 .news .item_content .text {
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-family: "Open Sans";
   line-height: 25px;
   font-size: 1.125rem;
@@ -451,9 +687,34 @@ a {
 .gallery #light_gallery a {
   display: block;
 }
+.gallery #light_gallery a:hover {
+  opacity: 0.9;
+}
 .gallery #light_gallery a:first-child {
   grid-column: 1/3;
   grid-row: 1/3;
+  position: relative;
+}
+.gallery #light_gallery a:first-child::before, .gallery #light_gallery a:first-child::after {
+  content: "";
+  display: none;
+  width: 80px;
+  height: 15px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  border-radius: 5px;
+}
+.gallery #light_gallery a:first-child::before {
+  transform: translate(-50%, -50%);
+}
+.gallery #light_gallery a:first-child::after {
+  transform: translate(-50%, -50%) rotateZ(90deg);
+}
+.gallery #light_gallery a:first-child:hover::before, .gallery #light_gallery a:first-child:hover::after {
+  display: block;
 }
 
 #map {
@@ -461,13 +722,17 @@ a {
   height: 700px;
   position: relative;
   margin: 0 auto;
+  z-index: 10;
 }
 #map a {
   height: 100%;
   display: block;
+  overflow: hidden;
+  position: relative;
 }
 #map a img {
   height: 100%;
+  width: auto;
 }
 #map p {
   display: flex;
@@ -490,8 +755,10 @@ a {
 }
 
 .footer {
-  padding: 204px 0 233px;
+  height: 550px;
   background: url(../images/bg_footer-min.png), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  background-position: bottom;
+  background-size: cover;
   position: relative;
 }
 .footer #contact {
@@ -500,11 +767,13 @@ a {
   color: #000;
   position: absolute;
   left: 50%;
-  top: -54.5%;
+  top: -300px;
   transform: translateX(-50%);
-  width: 770px;
+  max-width: 770px;
+  width: 100%;
   height: 450px;
   padding: 90px 60px 30px;
+  z-index: 15;
 }
 .footer #contact .contact_info svg {
   fill: #7E5AFF;
@@ -555,6 +824,7 @@ a {
   margin-bottom: 30px;
 }
 .footer #contact input:focus {
+  border-bottom: 2px solid #000;
   outline: none;
 }
 .footer #contact .btn {
@@ -567,9 +837,11 @@ a {
 }
 .footer .container_footer {
   max-width: 770px;
+  width: 90%;
   margin: 0 auto;
 }
 .footer_wrap {
+  padding-top: 204px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;

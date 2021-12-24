@@ -25,6 +25,23 @@ lightGallery(document.getElementById('light_gallery'), {
 });
 
 $(function(){
+    // Фикс Хедер
+    $(window).on('scroll', function(){
+        if($(window).scrollTop()>0){
+            if(!$('body').hasClass('fixed_nav')){
+            $('body').addClass('fixed_nav');
+            }
+        }else{
+            if($('body').hasClass('fixed_nav')){
+            $('body').removeClass('fixed_nav');
+            }
+        }
+    });
+    // Гамбургер меню
+    $(".hamburger, #page_overlay").on('click', function(){
+        $("#mobile_menu_wrap .hamburger").toggleClass("is-active");
+        $("body").toggleClass("open");
+    });
     // Плавный скрол
     $('.anchor').on('click', function(e){
         e.preventDefault();
@@ -41,7 +58,7 @@ $(function(){
             for(let i=0;i<json.length;i++){
                 html += `
                 <li>
-                    <div class="item">
+                    <a href="" class="item">
                         <div class="item_image"><img data-src="assets/images/${json[i].pic}" alt="news image"></div>
                         <div class="item_content">
                             <h4 class="title">${json[i].title}</h4>
@@ -54,7 +71,7 @@ $(function(){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </li>`;
             }
             $('.news_list').html(html);
@@ -67,7 +84,7 @@ $(function(){
                 onSliderLoad: function(el){lazyForSlider(el)},
                 responsive : [
                     {
-                    breakpoint:1400,
+                    breakpoint:1300,
                     settings: 
                         {
                         item:2,
@@ -75,7 +92,7 @@ $(function(){
                         }
                     },
                     {
-                    breakpoint:480,
+                    breakpoint:745,
                     settings: 
                         {
                         item:1,
@@ -92,7 +109,7 @@ $(function(){
     $("#init_map").on('click', function(){
         $(this).remove();
         // Этого достаточно для отображения карты, без всяких инициализаций и маркеров
-        var map = L.map('map').setView([50.42771636350422, 30.639843722586775], 13);
+        var map = L.map('map').setView([40.674948, -73.9016258], 13);
         L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
@@ -102,7 +119,7 @@ $(function(){
             iconSize: [106, 106],
         });
         //вставляем маркер
-        const marker = L.marker([50.42771636350422, 30.639843722586775], {icon:myIcon}).addTo(map)
+        const marker = L.marker([40.674948, -73.9016258], {icon:myIcon}).addTo(map)
         .bindPopup(`
         <div class="map_popup">
         <img src="assets/images/car_1.jpg" alt="">

@@ -26,7 +26,24 @@ lightGallery(document.getElementById('light_gallery'), {
   thumbnail: true
 });
 $(function () {
-  // Плавный скрол
+  // Фикс Хедер
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() > 0) {
+      if (!$('body').hasClass('fixed_nav')) {
+        $('body').addClass('fixed_nav');
+      }
+    } else {
+      if ($('body').hasClass('fixed_nav')) {
+        $('body').removeClass('fixed_nav');
+      }
+    }
+  }); // Гамбургер меню
+
+  $(".hamburger, #page_overlay").on('click', function () {
+    $("#mobile_menu_wrap .hamburger").toggleClass("is-active");
+    $("body").toggleClass("open");
+  }); // Плавный скрол
+
   $('.anchor').on('click', function (e) {
     e.preventDefault();
     var top = $($(this).attr('href')).offset().top;
@@ -43,7 +60,7 @@ $(function () {
       var html = '';
 
       for (var i = 0; i < json.length; i++) {
-        html += "\n                <li>\n                    <div class=\"item\">\n                        <div class=\"item_image\"><img data-src=\"assets/images/".concat(json[i].pic, "\" alt=\"news image\"></div>\n                        <div class=\"item_content\">\n                            <h4 class=\"title\">").concat(json[i].title, "</h4>\n                            <p class=\"text\">").concat(json[i].text, "</p>\n                            <div class=\"author\">\n                                <div class=\"author_avatar\"><img data-src=\"assets/images/").concat(json[i].author.avatar, "\"></div>\n                                <div class=\"author_wrap\">\n                                    <p class=\"author_name\">").concat(json[i].author.name, "</p>\n                                    <span class=\"author_date\">").concat(json[i].author.date, "</span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </li>");
+        html += "\n                <li>\n                    <a href=\"\" class=\"item\">\n                        <div class=\"item_image\"><img data-src=\"assets/images/".concat(json[i].pic, "\" alt=\"news image\"></div>\n                        <div class=\"item_content\">\n                            <h4 class=\"title\">").concat(json[i].title, "</h4>\n                            <p class=\"text\">").concat(json[i].text, "</p>\n                            <div class=\"author\">\n                                <div class=\"author_avatar\"><img data-src=\"assets/images/").concat(json[i].author.avatar, "\"></div>\n                                <div class=\"author_wrap\">\n                                    <p class=\"author_name\">").concat(json[i].author.name, "</p>\n                                    <span class=\"author_date\">").concat(json[i].author.date, "</span>\n                                </div>\n                            </div>\n                        </div>\n                    </a>\n                </li>");
       }
 
       $('.news_list').html(html);
@@ -57,13 +74,13 @@ $(function () {
           lazyForSlider(el);
         },
         responsive: [{
-          breakpoint: 1400,
+          breakpoint: 1300,
           settings: {
             item: 2,
             slideMargin: 30
           }
         }, {
-          breakpoint: 480,
+          breakpoint: 745,
           settings: {
             item: 1
           }
@@ -82,7 +99,7 @@ $(function () {
   $("#init_map").on('click', function () {
     $(this).remove(); // Этого достаточно для отображения карты, без всяких инициализаций и маркеров
 
-    var map = L.map('map').setView([50.42771636350422, 30.639843722586775], 13);
+    var map = L.map('map').setView([40.674948, -73.9016258], 13);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map); //можно коректировать пути к маркеру, или менять на кастомный
@@ -92,7 +109,7 @@ $(function () {
       iconSize: [106, 106]
     }); //вставляем маркер
 
-    var marker = L.marker([50.42771636350422, 30.639843722586775], {
+    var marker = L.marker([40.674948, -73.9016258], {
       icon: myIcon
     }).addTo(map).bindPopup("\n        <div class=\"map_popup\">\n        <img src=\"assets/images/car_1.jpg\" alt=\"\">\n        <div class=\"map_info\">\n        <b>Hello</b>\n        <p>I am here</p>\n        </div>\n        </div>\n        ");
   }); // отправка данных из формы в телеграмм
