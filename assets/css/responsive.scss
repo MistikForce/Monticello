@@ -342,9 +342,23 @@ $base_size:16;//коэффициент по умолчанию
     }
 }
 @media screen and (max-width:400px){
+    .top {
+        .title {
+            .text {
+                @include fz(40);
+                max-width: 300px;
+            }
+            .subtext {
+                max-width: 300px;
+            }
+        }
+    }
     .news {
         .item {
             height: 480px;
+            .title {
+                @include fz(18);
+            }
         }
     }
 }

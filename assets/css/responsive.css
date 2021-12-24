@@ -292,7 +292,18 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .top .title .text {
+    font-size: 2.5rem;
+    max-width: 300px;
+  }
+  .top .title .subtext {
+    max-width: 300px;
+  }
+
   .news .item {
     height: 480px;
+  }
+  .news .item .title {
+    font-size: 1.125rem;
   }
 }

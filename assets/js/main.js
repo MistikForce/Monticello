@@ -161,7 +161,7 @@ $(function(){
     // СЛАЙДЕР Верхней секции
     $("#slider").lightSlider({
         item:1,
-        // auto:true,
+        auto:true,
         speed: 2000,
         pause: 3000,
         loop:true,
