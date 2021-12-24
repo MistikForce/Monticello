@@ -165,6 +165,7 @@ $(function(){
         speed: 1500,
         pause: 3000,
         enableTouch:false,
+        freeMove:false,
         loop:true,
         vertical:true,
         verticalHeight:800,
